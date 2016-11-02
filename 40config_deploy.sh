@@ -23,7 +23,7 @@ function error_exit
 
 SOURCE=/tmp/deployment/config
 #remove default nginx configs so they dont overwrite our own!!
-rm -rfv $SOURCE/#etc#nginx*
+#rm -rfv $SOURCE/#etc#nginx*
 for i in $(ls $SOURCE); do
   FILE_NAME=$(echo $i | sed -e 's/#/\//g')
   /bin/cp "$SOURCE/$i" "$FILE_NAME" || error_exit "Failed to copy $FILE_NAME into place."
